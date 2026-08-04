@@ -1,0 +1,19 @@
+{
+  "name": "xls68-x402-fee-sponsoring",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "XLS-68 sponsored-fees prototype for the x402 xrplFeeSponsoring extension — XRPL Devnet, end to end",
+  "scripts": {
+    "prototype": "tsx prototype.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "xrpl": "^5.0.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.0"
+  }
+}

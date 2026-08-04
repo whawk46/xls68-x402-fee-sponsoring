@@ -1,0 +1,47 @@
+{
+  "network": "wss://s.devnet.rippletest.net:51233",
+  "ranAt": "2026-08-04T22:18:18.339Z",
+  "accounts": {
+    "facilitator": "rwun2DNkUCSM3Hs9JyFdsRCZootzYTHQVN",
+    "issuer": "rpRBWxs7Tjw1JdzJsAua9vmq8bqrjzSXq8",
+    "merchant": "rBnfftQcTYvaQiKsGsjpYAmLZz8bPYwNC5",
+    "payer": "rJ62o14YTE81DUHPneUWDoxq5xFSZ47Vpt"
+  },
+  "acts": {
+    "act2_sponsoredAccountCreate": {
+      "hash": "CA9F666309E266D0B0F59FB980C71D1275786CB0598F79DEC43856182B708903",
+      "balance": "1",
+      "sponsor": "rwun2DNkUCSM3Hs9JyFdsRCZootzYTHQVN"
+    },
+    "act3_sponsoredTrustSet": {
+      "hash": "4095E40AEA5240FE23E7DC1F84212DAC7EEACE765F98FD98BB6EE07C59000C85",
+      "payerBalanceAfter": "1",
+      "lineSponsor": "rwun2DNkUCSM3Hs9JyFdsRCZootzYTHQVN"
+    },
+    "act4_issuerFunding": {
+      "hash": "A13433C559E76157BEBF9965328C562F0FA571477760A14E9D6E21FB83870703"
+    },
+    "act5_x402Moment": {
+      "hash": "F306E3053CA5317F4464E62EA074B6DBE5F2CD53A7428AB6CC43C3615CDCB32A",
+      "payerXrpAfter": "1",
+      "facilitatorFeePaid": "12",
+      "merchantFcd": "2.5"
+    },
+    "act7a_sponsorshipSet": {
+      "hash": "2D34DAE2F84A97AEEF035A7FC596DBDAA8112DB032E16730C02C06D41AB3B219"
+    },
+    "act7b_prefundedPayment": {
+      "hash": "111F41363957449154FFAA6376DB57091FB4D2E84EE7FD4E810FD601028D119D"
+    },
+    "act7c_poolAfter": {
+      "feeAmount": "999976"
+    }
+  },
+  "negativeControls": {
+    "tamperAfterSponsorSign": "LOCAL_REJECT: fails local checks: Sponsor: Invalid signature.",
+    "sponsorAltersTerms": "LOCAL_REJECT: fails local checks: Invalid signature.",
+    "sponsorSignatureReplay": "LOCAL_REJECT: fails local checks: Sponsor: Invalid signature.",
+    "missingSponsorSignature": "terNO_PERMISSION",
+    "maxFeeDrainBlocked": "terINSUF_FEE_B"
+  }
+}
