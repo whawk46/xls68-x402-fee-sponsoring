@@ -1,0 +1,27 @@
+{
+  "description": "xrplFeeSponsoring joint test vectors \u2014 real XRPL Devnet blobs, validated on-ledger. Assert verbatim (hex, uppercase). Provenance: every vector is re-derivable from the public Devnet history via the `tx` method with binary:true.",
+  "source": "Devnet run 2026-08-04 (wss://s.devnet.rippletest.net:51233, rippled 3.3.0-rc5, XLS-68 Sponsor amendment active). Evidence chain in whawk46/xls68-x402-fee-sponsoring.",
+  "vectors": [
+    {
+      "name": "sponsored-payment",
+      "txHash": "F306E3053CA5317F4464E62EA074B6DBE5F2CD53A7428AB6CC43C3615CDCB32A",
+      "ledgerIndex": 4211027,
+      "summary": "Payer rJ62o14Y\u2026 (1 drop XRP, fee-sponsored) pays merchant rBnfftQc\u2026 2.5 FCD; facilitator rwun2DNk\u2026 carries the 12-drop fee via Sponsor + SponsorSignature. Both parties signed identical STX\\0 bytes.",
+      "baseScheme": "MUST_REJECT",
+      "baseSchemeReason": "carries `Sponsor` and `SponsorSignature`, which are not in the base scheme's Payment field allowlist",
+      "extensionAware": "MUST_ACCEPT",
+      "blobHex": "120000240040414E201B0040417A204A0000000161D488E1BC9BF0400000000000000000000000000046434400000000000F8AE3322434A9F800DE6F3F8A3CE4571651C33D68400000000000000C7321EDA1EC51E363E86F50C845611412C6CB8F5736BA25EF9406DA516D5F8A543A394C7440EE1C0CED21D3794FBFBA5E61F4BC44B880BD3A591118138DDCF20075731D355F8EEDF56EAD11F4A662E3B974BF7D3F4665CAEF4EAF61ACB4015B2E7C36CF11018114C226FF9458B8B0D6EEF1C504BC3178F68FD9E1BE83146E7807830BEA4C9D495B091E8CC2FFDB39BD0278801B146C92943ED80CB008FBC02B38EC7D35F74B8A3FE5E0267321EDE870C1A491E87A212D41DBF634476D4A1E50AF3D7CE94CA9BFB8BD476F4CF9317440BCAA29225213CE6A1B85D85756A55B7C5B6F5FB9213D294190F9851BFA8CAD9BEF43BF1E2E47B0F472E042D986E0CB3B22446F1F8DB6B1E7B06F410CD8B86F07E1"
+    },
+    {
+      "name": "plain-payment",
+      "txHash": "A13433C559E76157BEBF9965328C562F0FA571477760A14E9D6E21FB83870703",
+      "ledgerIndex": 4211024,
+      "summary": "Ordinary issued-currency Payment (issuer funds the payer with 10 FCD), no sponsorship fields anywhere.",
+      "baseScheme": "MUST_ACCEPT",
+      "baseSchemeReason": "every field is in the base allowlist",
+      "extensionAware": "MUST_ACCEPT",
+      "blobHex": "120000240040414A201B0040417761D4C38D7EA4C6800000000000000000000000000046434400000000000F8AE3322434A9F800DE6F3F8A3CE4571651C33D68400000000000000C7321ED43DBB35E73B8FC96EC70B956E76CF4C3B4C9611BA9FDD290A90BD8831FD80D32744009C627784FE8F420E459904E98E3AB7BAA6A216F7352F498848185C8B945861CB772254695A2F1D98C47EB893C1705AC19575CA1D7F1294886F23CE68248730681140F8AE3322434A9F800DE6F3F8A3CE4571651C33D8314C226FF9458B8B0D6EEF1C504BC3178F68FD9E1BE"
+    }
+  ],
+  "note": "Per dimitricole (x402 #3048): the sponsored-payment vector also earns its keep in the base suite today as a must-reject fixture \u2014 rewrapped under base-scheme terms it must still be refused, and that refusal lands on the bytes themselves."
+}
